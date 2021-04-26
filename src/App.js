@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
 
+import { BrowserRouter, Route, Link, Router, Redirect } from 'react-router-dom';
+import Home from './component/home';
+import Foods from './component/foods';
+import navbarmain from './component/navbarmain';
+import Menu from './component/menu'
+import Menagefood from './component/managefood'
+import './component/css/app.css'
+import Nutrition from './component/nutrition'
+import Insertutrition from './component/insertnutrition'
+import Getfood from './component/getfood';
+import Main from './component/pagestarts/main'
+import Pre1 from './component/pagestarts/Pre1'
+import Pre2 from './component/pagestarts/Pre2'
+import Pre3 from './component/pagestarts/Pre3'
+import Login from './component/pagelogin/Login';
+import Registor from './component/pagelogin/Registor';
+import Registorstore from './component/pagelogin/Registorstore';
+import Registoradmin from './component/pagelogin/Registoradmin';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div >
+            <div>
+                <Route exact path="/" component={Main}></Route>
+                <Route exact path="/pre1" component={Pre1}></Route>
+                <Route exact path="/pre2" component={Pre2}></Route>
+                <Route exact path="/pre3" component={Pre3}></Route>
+                <Route exact path="/login" component={Login}></Route>
+                <Route exact path="/registor" component={Registor}></Route>
+                <Route exact path="/registor-store" component={Registorstore}></Route>
+                <Route exact path="/registor-admin" component={Registoradmin}></Route>
+                <Route exact path="/home" component={Home}></Route>
+                <Route exact path="/foods" component={Foods}></Route>
+                <Route exact path="/menu" component={Menu}></Route>
+                <Route exact path="/menagefood" component={Menagefood}></Route>
+                <Route exact path="/nutrition" component={Nutrition}></Route>
+                <Route exact path="/insert-nutrition" component={Insertutrition}></Route>
+                <Route exact path="/getfood" component={Getfood}></Route>
+
+            </div>
+        </div>
+    );
 }
 
 export default App;

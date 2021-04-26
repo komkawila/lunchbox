@@ -1,0 +1,291 @@
+
+.body-food{
+    margin-top: 20px;
+    padding: auto;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+.body-food hr{
+    margin-bottom: -7.5px;
+    margin-top: -7.5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.item-food{
+    display: flex;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    width: 90%;
+}
+.img-food{
+    border-radius: 20px;
+    width: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 20px;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+}
+.img-food img{
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+}
+.detial-food{
+    padding: 5px;
+    width: 60%;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 20px;
+    border-style: solid;
+    color: rgb(64, 165, 224);
+    background-color: rgb(255, 255, 255);
+}
+.detial-food div{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.title-food{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    color: black;
+}
+.title-food p{
+    margin-top: 7px;
+    margin-left:100px;
+    font-size:28px;
+}
+
+.title-food div{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: bold;
+    font-size: 36px;
+    margin-left: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.title-food button{
+    width: 100px;
+    color: white;
+    border-radius: 10px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    background-image: linear-gradient(135deg, rgb(17, 29, 201) 0%, rgba(45, 32, 223, 0.5) 100%);
+
+}
+.cal-food{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+}
+.cal-food span{
+    background-image: linear-gradient(135deg, rgb(17, 29, 201) 0%, rgba(45, 32, 223, 0.5) 100%);
+    width: 100px;
+    height: 100px;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    text-align: center;
+}
+.cal-food span p{ 
+    color: white;
+    line-height: 12px;
+    margin-bottom: 20px;
+}
+.material-food{
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.material-food h4{
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(53, 143, 202);
+}
+.material-food div div{
+    margin-left: 30px;
+    line-height: 0px;
+    color: rgb(0, 0, 0);
+}
+.sol-food{
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.sol-food h4{
+    margin-bottom: 10px;
+    color: rgb(53, 143, 202);
+}
+.sol-food p{
+    margin-left: 30px;
+    color: rgb(0, 0, 0);
+}
+.n-foods{
+    width: 300px;
+}
+.na-foods{
+    width: 30px;
+}
+.u-foods{
+    width: 80px;
+}
+.p-foods{
+    width: 50;
+    margin-right: 5px;
+}
+
+@media only screen and (max-width: 600px){
+
+    .body-food{
+        margin-top: 0;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        background-color: rgb(255, 255, 255);
+    }
+    .body-food hr{
+        margin-bottom: -7.5px;
+        margin-top: -7.5px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .item-food{
+        display: block;
+        margin: auto;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        width: 100%;
+    }
+    .img-food{
+        border-radius: 20px;
+        width: 100%;
+        height: 50px;
+        margin: 0px;
+        height: auto;
+        background-color: rgb(255, 255, 255);
+    }
+    .img-food img{
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    .detial-food{
+        padding: 0px;
+        width: 100%;
+        height: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        border: none;
+        border-style: none;
+        color: rgb(64, 165, 224);
+        background-color: rgb(255, 255, 255);
+    }
+    .detial-food div{
+        margin: 10px 0px;
+    }
+    .title-food{
+        display: flex;
+        font-size: 18px;
+        color: black;
+    }
+    .title-food p{
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left:100px;
+        font-size:20px;
+    }
+    .title-food div{
+        margin-top: auto;
+        margin-bottom: auto;
+        font-weight: bold;
+        font-size: 24px;
+        margin-right: 5px;
+        margin-left: 10px;
+        background-color: rgb(255, 255, 255);
+    }
+    .title-food button{
+        width: 70px;
+        color: white;
+        border-radius: 10px;
+        height: 40px;
+        font-size: 20px;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        background-image: linear-gradient(135deg, rgb(17, 29, 201) 0%, rgba(45, 32, 223, 0.5) 100%);
+    
+    }
+    .cal-food{
+        display: flex;
+        background-color: rgb(255, 255, 255);
+    }
+    .cal-food span{
+        background-image: linear-gradient(135deg, rgb(17, 29, 201) 0%, rgba(45, 32, 223, 0.5) 100%);
+        width: 100px;
+        height: 100px;
+        padding: 15px;
+        margin: 2px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .cal-food span p{ 
+        color: white;
+        line-height: 12px;
+        margin-bottom: 20px;
+    }
+    .material-food{
+        padding: 10px;
+        background-color: rgb(255, 255, 255);
+    }
+    .material-food h4{
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: rgb(53, 143, 202);
+    }
+    .material-food div div{
+        margin-left: 30px;
+        line-height: 0px;
+        color: rgb(0, 0, 0);
+    }
+    .sol-food{
+        padding: 10px;
+        background-color: rgb(255, 255, 255);
+    }
+    .sol-food h4{
+        margin-bottom: 10px;
+        color: rgb(53, 143, 202);
+    }
+    .sol-food p{
+        margin-left: 30px;
+        color: rgb(0, 0, 0);
+    }
+    .n-foods{
+        margin-left: 0;
+        width: 300px;
+    }
+    .na-foods{
+        width: 20px;
+    }
+    .u-foods{
+        width: 20px;
+    }
+    .p-foods{
+        display: none;
+    }
+    .im-foods{
+    display: none;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+}
+@media only screen and (min-width: 900px) {
+}
+@media only screen and (min-width: 1400px) {
+}
+@media only screen and (min-width: 1600px) {
+}

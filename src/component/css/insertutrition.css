@@ -1,0 +1,363 @@
+.body-insertnutrition{
+    /* display: block; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    color: rgb(10, 157, 177);
+    border-radius: 20px;
+    border-style: solid;
+    /* overflow-y: scroll; */
+    /* background-color: wheat; */
+}
+.body-insertnutrition h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+.body-insertnutrition hr{
+    margin-top: 15px;
+    margin-bottom: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.detial-insertnutrition {
+    /* border-style: solid; */
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: violet; */
+    
+}
+.detial-insertnutrition span{
+    display:  flex;
+    margin-top: 15px;
+}
+.detial-insertnutrition span h3{
+    margin-top: 10px;
+    width: 200px;
+    font-size: 24px;
+}
+
+.detial-insertnutrition span input{
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 24px;
+    padding-left: 20px;
+    border-color: rgb(172, 173, 171);
+    border-style:outset;
+}
+.detial-insertnutrition span select{
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    padding-left: 20px;
+    font-size: 24px;
+    border-color: rgb(172, 173, 171);
+}
+.detial-calI {
+  width: 500px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    padding: 0px;
+}
+.detial-calI span hr{
+    margin: 0;
+    padding: 0;
+}
+.detial-calI span{
+    display: flex;
+    border-style:ridge;
+    padding: 5px;
+    height: 60px;
+}
+.detial-calI h1{
+    color: black;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.detial-calI input{
+    font-size: 24px;
+    border-style: none;
+    padding-left: 20px;
+    border-color: black;
+    width: 250px;
+    border-radius: 10px;
+    background-color: rgba(231, 227, 227, 0.575);
+}
+.body-insertnutrition h2{
+    width: 500px; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-page{
+    margin: auto;
+    width: 380px;
+    background-color: rgb(255, 255, 255);
+}
+.btn-page button{
+    height: 50px;
+    border-style: none;
+    border-radius: 5px;
+    text-align: center;
+    width: 150px;
+    font-size: 20px;
+    margin: 0 20px 0 20px ;
+    color: white;
+    background-color: rgb(39, 94, 146);
+}
+
+@media only screen and (max-width: 360px){
+    .body-insertnutrition{
+        /* display: block; */
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 100%;
+        
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        color: rgb(10, 157, 177);
+        border-radius: 20px;
+        border-style: none;
+        /* overflow-y: scroll; */
+        background-color: wheat;
+    }
+    .h1{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    .body-insertnutrition hr{
+        display: none;
+    }
+    .detial-insertnutrition {
+        /* border-style: solid; */
+        width: 100%;
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        /* background-color: violet; */
+        
+    }
+    .detial-insertnutrition span{
+        display:  flex;
+    }
+    .detial-insertnutrition span h3{
+        margin-top: 10px;
+        width: 180px;
+        font-size: 18px;
+    }
+    
+    .detial-insertnutrition span input{
+        width: auto;
+        height: 45px;
+        border-radius: 5px;
+        font-size: 24px;
+        padding-left: 20px;
+        border-color: rgb(172, 173, 171);
+        border-style:outset;
+    }
+    .detial-insertnutrition span select{
+        width: 200px;
+        height: 50px;
+        border-radius: 5px;
+        padding-left: 20px;
+        font-size: 24px;
+        border-color: rgb(172, 173, 171);
+    }
+    .detial-calI {
+      width: 100%; 
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+        padding: 0px;
+    }
+    .detial-calI span hr{
+        margin: 0;
+        padding: 0;
+    }
+    .detial-calI span{
+        display: flex;
+        border-style:ridge;
+        padding: 5px;
+        height: 60px;
+    }
+    .detial-calI h1{
+        color: black;
+        background-color: rgb(253, 253, 253);
+        font-size: 24px;
+        margin-left: auto;
+        margin-right: 5px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .detial-calI input{
+        font-size: 24px;
+        border-style: none;
+        padding-left: 20px;
+        border-color: black;
+        width: 200px;
+        border-radius: 10px;
+        background-color: rgba(231, 227, 227, 0.575);
+    }
+    .body-insertnutrition h2{
+        width: auto; 
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn-page{
+        margin: auto;
+        width: 80%;
+        display: flex;
+    }
+    .btn-page button{
+        height: 50px;
+        border-style: none;
+        border-radius: 5px;
+        text-align: center;
+        width: 120px;
+        font-size: 20px;
+        margin: 0 20px 0 20px ;
+        color: white;
+        background-color: rgb(39, 94, 146);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .body-insertnutrition{
+        /* display: block; */
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        color: rgb(10, 157, 177);
+        border-radius: 20px;
+        border-style: none;
+        /* overflow-y: scroll; */
+        /* background-color: wheat; */
+    }
+    .body-insertnutrition h1{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 32px;
+    }
+    .body-insertnutrition hr{
+        display: none;
+    }
+    .detial-insertnutrition {
+        /* border-style: solid; */
+        width: 100%;
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        /* background-color: violet; */
+        
+    }
+    .detial-insertnutrition span{
+        display:  flex;
+    }
+    .detial-insertnutrition span h3{
+        margin-top: 10px;
+        width: 180px;
+        font-size: 18px;
+    }
+    
+    .detial-insertnutrition span input{
+        width: auto;
+        height: 50px;
+        border-radius: 5px;
+        font-size: 24px;
+        padding-left: 20px;
+        border-color: rgb(172, 173, 171);
+        border-style:outset;
+    }
+    .detial-insertnutrition span select{
+        width: 200px;
+        height: 50px;
+        border-radius: 5px;
+        padding-left: 20px;
+        font-size: 24px;
+        border-color: rgb(172, 173, 171);
+    }
+    .detial-calI {
+      width: 100%; 
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+        padding: 0px;
+    }
+    .detial-calI span hr{
+        margin: 0;
+        padding: 0;
+    }
+    .detial-calI span{
+        display: flex;
+        border-style:ridge;
+        padding: 5px;
+        height: 60px;
+    }
+    .detial-calI h1{
+        color: black;
+        background-color: rgb(253, 253, 253);
+        font-size: 24px;
+        margin-left: auto;
+        margin-right: 5px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .detial-calI input{
+        font-size: 24px;
+        border-style: none;
+        padding-left: 20px;
+        border-color: black;
+        width: 200px;
+        border-radius: 10px;
+        background-color: rgba(231, 227, 227, 0.575);
+    }
+    .body-insertnutrition h2{
+        width: auto; 
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn-page{
+        margin: auto;
+        width: 80%;
+        display: flex;
+    }
+    .btn-page button{
+        height: 50px;
+        border-style: none;
+        border-radius: 5px;
+        text-align: center;
+        width: 120px;
+        font-size: 20px;
+        margin: 0 20px 0 20px ;
+        color: white;
+        background-color: rgb(39, 94, 146);
+    }
+}
+@media only screen and (min-width: 600px) {
+}
+@media only screen and (min-width: 1400px) {
+}
+@media only screen and (min-width: 1600px) {
+}

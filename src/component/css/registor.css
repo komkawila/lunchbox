@@ -1,0 +1,75 @@
+.registor{
+    width: 60%;
+    margin: auto;
+    padding: auto 20px;
+    background-image: linear-gradient(135deg, rgb(5, 3, 97) 0%, rgba(24, 148, 185, 0.8) 100%);
+
+}
+.registor-type{
+    text-align: center;
+}
+.registor-type p{
+    font-weight: bold;
+    font-size: 32px;
+    color: white;
+    
+}
+.registor-type img{
+    height: 200px;
+    margin-bottom: 120px;
+    
+}
+.btn-rg{
+    margin: 50px 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+.iconrg{
+    color: white;
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+@media only screen and (max-width: 600px){
+    .registor{
+        width: 100%;
+        padding: 40px 30px 80px 30px;
+        margin: 0%;
+        height: 100%;
+        border-radius: 0px;
+      }
+    .btn-rg{
+        margin: 30px 0;
+
+    font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .registor{
+        width: 500px;
+        margin: 5px auto;
+        padding-bottom: 50px;
+        padding-top: 50px;
+      }
+    .btn-rg{
+        margin: 30px 0;
+    }
+}
+@media only screen and (min-width: 900px) {
+  
+}
+@media only screen and (min-width: 1400px) {
+  
+}
+@media only screen and (min-width: 1600px) {
+    .registor{
+        width: 500px;
+        margin: 20px auto;
+        padding-bottom: 50px;
+        padding-top: 50px;
+      }
+    .btn-rg{
+        margin: 50px 0;
+    }
+}

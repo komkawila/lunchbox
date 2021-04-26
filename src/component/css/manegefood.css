@@ -1,0 +1,311 @@
+
+.body-foods{
+    margin-top: 20px;
+    padding: auto;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+.title-foods hr{
+    margin: auto 20px auto 20px;
+    padding: 0;
+}
+.item-foods{
+    display: flex;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 10px ;
+    width: 90%;
+}
+
+.img-foods img{
+    width: 100%;
+    height: 100%;
+}
+.detial-foods{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border-style: solid;
+    color: rgb(64, 165, 224);
+    background-color: rgb(255, 255, 255);
+}
+.title-foods{
+    display: flex;
+    padding: 10px;
+    color: black;
+}
+.choose-file{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(238, 235, 235);
+    margin: auto;
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid black
+}
+.choose-file div{
+    border-style: none;
+    width: 300px;
+    height: 50px;
+    padding: 5px;
+    font-size: 24px;
+    margin-right: 10px;
+    background-color: rgb(238, 235, 235);
+}
+.cal-foods{
+    display: flex;
+    margin: 10px;
+}
+.cal-foods span{
+    background-image: linear-gradient(135deg, rgb(17, 29, 201) 0%, rgba(45, 32, 223, 0.5) 100%);
+    width: 20%;
+    height: 100px;
+    padding: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    text-align: center;
+}
+.cal-foods span p{ 
+    color: white;
+    font-size: 20px;
+    line-height: 0px;
+}
+.cal-foods span h1{
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: white;
+    line-height: 0px;
+}
+.material-foods{
+    margin: 10px;
+    padding: 10px;
+}
+.material-foods h6{
+    font-size: 22px;
+    width: 105px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    color: rgb(53, 143, 202);
+}
+.material-foods p{
+    padding-top: 12px;
+    background-color: rgb(255, 255, 255);
+    width: 50px;
+    font-size: 22px;
+    margin-left: 30px;
+    color: rgb(0, 0, 0);
+}
+.material-foods div{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 30px;
+    color: rgb(0, 0, 0);
+}
+.material-foods h2{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+}
+.material-foods select{
+    font-size: 18px;
+    width: 30%;
+    padding-left: 20px;
+    border-color: black;
+    height: 50px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 30px;
+    color: rgb(0, 0, 0); 
+}
+
+
+
+.material-foods input{
+    width: 15%;
+    height: 50px;
+    border-color: black;
+    font-size: 18px;
+    padding: 10px;
+    margin-left: 30px;
+    color: rgb(0, 0, 0);
+}
+.sol-foods{
+    margin: 10px;
+    padding: 10px;
+}
+.sol-foods h6{
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: rgb(53, 143, 202);
+}
+.sol-foods p{
+    margin-left: 30px;
+    color: rgb(0, 0, 0);
+}
+.sol-foods textarea{
+    width: 90%;
+    padding: 10px;
+    font-size: 18px;
+    margin-left: 5%;
+    height: 100px;
+    border-color: black;
+}
+.title-food-imgs{
+    display: block;
+    width: 50%;
+    text-align: center;
+    height: 500px;
+    padding: 0;
+    background-color: none;
+}
+.title-food-imgs label{
+    background-color: rgb(37, 104, 37);
+    color: white;
+    height: 50px;
+    width: 200px;
+    padding: 10px;
+    /* padding: 0.5rem; */
+    font-family: sans-serif;
+    font-size: 22px;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.title-food-imgs img{
+    padding: 5px;
+    width: 500px;
+    height: 82%;
+    margin: 20px 20px 35px 20px;
+    border-radius: 10px;
+    border-style:dotted;
+}
+.title-food-items{
+    border-style: none;
+    width: 100%;
+    height: 500px;
+}
+
+.title-food-item-head{
+    height: 50%;
+    display: flex;
+}
+.title-food-item-head p{
+    margin: auto auto auto auto;
+    color:teal;
+    font-size: 50px;
+}
+.title-food-item-name{
+    height: 25%;
+    display: flex;
+}
+.title-food-item-name p{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 60%;
+    padding-left: 30%;
+    font-size: 32px;
+}
+.title-food-item-name input{
+    width: 40%;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 50px;
+    margin-left: auto;
+}
+.title-food-item-coin{
+    padding: 20px;
+}
+.title-food-item-coin span{
+    display: flex;
+    padding: 20px;
+}
+.title-food-item-coin img{
+    height: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+}
+.title-food-item-coin h1{
+    margin-left: auto;
+    margin-top: auto;
+    font-size: 32px;
+    margin-bottom: auto;
+}
+.title-food-item-coin input{
+    margin-left: 10px;
+    width: 40%;
+    padding-left: 10px;
+    font-size: 24px;
+    height: 50px;
+    overflow-y: hidden;
+    border-color: black;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+  
+}
+
+::mousewheel
+input[type=number] {
+  padding: 0 5px;
+}
+.material-foods span{
+    display: flex;
+}
+.material-foods span button{
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: rgb(31, 143, 31);
+    font-size: 30px;
+    color: white;
+    border-style: none;
+    width: 40px;
+    line-height: 0px;
+    height: 40px;
+    border-radius: 50px;
+}
+.material-foods div button{
+    margin-left: 15px;
+    margin-top: 8px;
+    font-weight: bold;
+    background-color: rgb(212, 18, 18);
+    font-size: 24px;
+    line-height: 8px;
+    color: white;
+    border-style: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+}
+.btn-save{
+    margin-top: 0px;
+    margin-left: auto;
+    width: 440px;
+    background-color: rgb(252, 252, 252);
+    margin-bottom: 20px;
+}
+.btn-save button{
+    margin-left: 10px;
+    width: 200px;
+    border-style: none;
+    font-size: 20px;
+    color: white;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgb(20, 101, 139);
+}

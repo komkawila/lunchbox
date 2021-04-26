@@ -1,0 +1,91 @@
+.registor-store{
+    width: 1000px;
+    display: block;
+    margin: auto;
+    padding: 20px 70px;
+    height: auto;
+    text-align: center;
+    background-image: linear-gradient(135deg, rgb(5, 3, 97) 0%, rgba(24, 148, 185, 0.8) 100%);
+    
+}
+.registor-store h1{
+    margin-top: 10px;
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.rgt-hr{
+    width: auto;
+    height: 2px;
+    margin: 30px;
+    background-color: white;
+}
+.rgt-data{
+    text-align: start;
+    display: flex;
+    margin-top: -10px;
+    height: auto;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(114, 113, 113, 0.3);
+    border-radius: 10px;
+}
+.rgt-data p{
+    margin: 10px;
+    color: white;
+    font-size: 18px;
+}
+.rgt-1{
+    width: 48%;
+}
+.rgt-2{
+    margin-left: auto;
+    width: 48%;
+}
+.ip-rgt{
+    margin-bottom: 10px;
+    width: 100%;
+}
+.btn-rgt{
+    margin-top: 10px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+.rgt-lg{
+    width: 40%;
+}
+
+@media only screen and (max-width: 600px){
+    .registor-store{
+        width: 100%;
+        padding: 10px 10px;
+        background-image: linear-gradient(135deg, rgb(5, 3, 97) 0%, rgba(24, 148, 185, 0.8) 100%);
+    }
+    .rgt-data{
+        text-align: start;
+        display: block;
+        background-color: none;
+    }
+    .rgt-1{
+        width: 100%;
+    }
+    .rgt-2{
+        margin-left: auto;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+}
+@media only screen and (min-width: 900px) {
+  
+}
+@media only screen and (min-width: 1400px) {
+  
+}
+@media only screen and (min-width: 1600px) {
+
+}

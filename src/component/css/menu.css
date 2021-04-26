@@ -1,0 +1,370 @@
+
+
+.body-menu{
+    /* display: block; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    color: rgb(10, 157, 177);
+    border-radius: 20px;
+    border-style: solid;
+    /* overflow-y: scroll; */
+    /* background-color: wheat; */
+}
+
+.head-menu{
+    /* border-style: solid; */
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    /* background-color: violet; */
+    
+}
+.head-menu div{
+    /* border-style: solid; */
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: violet; */
+    
+}
+hr{
+    margin: 20px;
+}
+.head-menu input{
+    width: 50%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border-color: black;
+}
+.head-menu button{
+    margin-left: 20px;
+    padding: 15px 20px 15px 20px;
+    width: auto;
+    margin-top: auto;
+    font-size: 20px;
+    margin-bottom: auto;
+    height: auto;
+    border-style: none;
+    border-radius: 10px;
+    color: white;
+}
+.list-menu{
+    /* background-color: tomato; */
+    padding: 10px;
+    padding-left: 50px;
+    display: flex;
+    position: relative;
+}
+.list-menu img{
+    margin-bottom: auto;
+    margin-top: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+.list-menu span{
+    /* background-color: tomato; */
+    width: 40%;
+    display: block;
+    /* background-color: yellow; */
+}
+.list-menu span div{
+    margin: 5px 60px 0px ;
+    display: flex;
+}
+.list-menu span div h6{
+    width: 80px;
+    display: flex;
+    font-size: 18px;
+    color: rgb(0, 120, 212);
+
+}
+.list-menu span div p{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5px;
+    width: 100px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    font-size: 15px;
+    color: rgb(0, 120, 212);
+
+}
+.list-menu span div progress{
+    margin-top: auto;
+    height: 30px;
+    width: 230px;
+    margin-bottom: auto;
+    margin-left: 10px;
+    display: flex;
+}
+.list-menu span h4{
+    padding-left: 60px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 24px;
+    width: 65%;
+    color: black;
+}
+.list-menu button{
+    margin-left: auto;
+    width: 100px;
+    margin-right: 0px;
+    margin-top: auto;
+    font-size: 20px;
+    margin-bottom: auto;
+    height: 50px;
+    border-style: none;
+    border-radius: 10px;
+    color: white;
+}
+/* .list-item::-webkit-scrollbar{
+    width: 100px;
+} */
+
+
+.gda{
+    width: 150px;
+    height: 100%;
+    margin-top: auto;
+    padding-bottom: 2px;
+    padding-top: auto;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+.gda img{
+    width: 80%;
+}
+.kcal{
+    width: 180px;
+    margin-right: auto;
+    /* background-color: rgb(204, 235, 143); */
+}
+.kcal-span1{
+    width: 65px;
+    height: 65px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    background-image: linear-gradient(135deg, rgb(10, 83, 112) 0%, rgba(40, 81, 143, 0.5) 100%);
+}
+.kcal-span2{
+    width: 65px;
+    height: 65px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 2px;
+    background-color: rgb(228, 230, 225);
+    /* background-image: linear-gradient(135deg, rgb(33, 31, 150) 0%, rgba(40, 81, 143, 0.5) 100%); */
+}
+.kcal-span2 img{
+    margin-top: 2px;
+    height: 30px;
+    width: 30px;
+ /* background-image: linear-gradient(135deg, rgb(33, 31, 150) 0%, rgba(40, 81, 143, 0.5) 100%); */
+}
+.item-right{
+    position: relative;
+    margin-left: auto;
+    display: flex;
+}
+.insertfoods1{
+    display: none;
+}
+.kcal-span1-p1{
+    font-size: 26px;
+    line-height: 20px;
+}
+.kcal-span1-p2{
+    font-size: 20px;
+    line-height: 20px;
+}
+@media only screen and (max-width: 600px){
+    .body-menu{
+        /* display: block; */
+        margin-top: 0px;
+        margin-bottom: 0px;
+        width: 100%;
+        padding: 0px;
+        margin-right: auto;color: rgb(10, 157, 177);
+        border-radius: 0px;
+        border: none;
+    }
+    .insertfoods1{
+        display: flex;
+    }
+    .insertfoods2{
+        display: none;
+    }
+    .head-menu{
+        margin-bottom: 0px;
+    }
+    .head-menu input{
+        width: 100%;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 10px;
+        border-color: black;
+    }
+    .list-item{
+        padding: 0px;
+        margin-top: -40px;
+    }
+    .list-menu{
+        padding-left: 0px;
+        max-height: 120px;
+        margin-top: 0px;
+        padding-right: 0;
+        /* background-color: tomato; */
+        padding: 10px;
+        display: flex;
+    }
+    .list-menu img{
+        margin-right: 5px;
+        margin-bottom: auto;
+        margin-top: auto;
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+    }
+    .list-menu span{
+        /* background-color: tomato; */
+        margin-left: 0px;
+        width: 100%;
+        display: block;
+        padding: 0;
+        /* background-color: yellow; */
+    }
+    .list-menu span div{
+        width: 80%;
+        display: flex;
+        margin-left: 0px;
+    }
+    .list-menu span div h6{
+        width: 60px;
+        height: 30px;
+        margin-left: 0px;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: block;
+        font-size: 16px;
+        color: rgb(0, 120, 212);
+    
+    }
+    .list-menu span div p{
+        display: none;
+    
+    }
+    .list-menu span div progress{
+        margin-top: auto;
+        height: 10px;
+        width: 60px;
+        margin-left: 0px;
+        margin-right: 0;
+        border-radius: 10px;
+        margin-bottom: auto;
+    }
+    .list-menu span h4{
+        padding-left: 5px;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 20px;
+        width: 65%;
+        color: black;
+    }
+
+    .gda{
+        width: 40px;
+        height: 40px;
+        top: 60px;
+        right: 118px;
+        position: absolute;
+    }
+    .gda img{
+        height: 35px;
+    }
+    .kcal{
+        position: absolute;
+        right: 60px;
+        display: flex;
+        margin-left: 5px;
+        width: 55px;
+        top: 32px;
+        /* background-color: rgb(204, 235, 143); */
+    }
+    
+    .kcal-span1{
+        width: 45px;
+        max-height: 45px;
+        border-radius: 5px;
+        margin: 5px;
+        text-align: center;
+        padding: 0px;
+        background-image: linear-gradient(135deg, rgb(10, 83, 112) 0%, rgba(40, 81, 143, 0.5) 100%);
+    }
+    .kcal-span2{
+        width: 45px;
+        max-height: 45px;
+        border-radius: 5px;
+        margin: 5px;
+        text-align: center;
+        padding: 0px;
+        /* background-image: linear-gradient(135deg, rgb(33, 31, 150) 0%, rgba(40, 81, 143, 0.5) 100%); */
+    }
+    .kcal-span2 img{
+        margin-top: 2px;
+        height: 25px;
+        width: 25px;
+     /* background-image: linear-gradient(135deg, rgb(33, 31, 150) 0%, rgba(40, 81, 143, 0.5) 100%); */
+    }
+    .kcal-span1-p1{
+        width: 50px;
+        height: 40px;
+        font-size: 18px;
+        line-height: 18px;
+        margin-bottom: -20px;
+    }
+    .kcal-span1-p2{
+        margin-top: 0px;
+        font-size: 16px;
+        line-height: 0px;
+    }
+    .item-right{
+        display: flex;
+        position: absolute;
+        right: 10px;
+        background-color: none;
+        bottom: -12px;
+    }
+    .item-right button{
+        margin-top: 20px;
+        margin-bottom: auto;
+        width: 50px;
+        height: 45px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+}
+@media only screen and (min-width: 900px) {
+}
+@media only screen and (min-width: 1400px) {
+}
+@media only screen and (min-width: 1600px) {
+}

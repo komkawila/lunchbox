@@ -1,0 +1,102 @@
+.container-login{
+    padding: 0;
+    margin: 0;
+    background-color: rgba(60, 152, 180, 0.3);
+}
+.login{
+    margin: 20px auto;
+    width: 30%;
+    display: block;
+    padding: 20px 30px;
+    background-image: linear-gradient(135deg, rgb(5, 3, 97) 0%, rgba(24, 148, 185, 0.8) 100%);
+
+}
+.login-img{
+    width: 100%;
+    height: 350px;
+    padding-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.login-img img{
+    height: 200px;
+}
+.hr-login{
+    color: black;
+    height: 50px;
+    width: 50px;
+}
+.or{
+    display: flex;
+    margin: 20px auto ;
+    width: 100%;
+
+}
+.or h1{
+    font-size: 20px;
+    color: white;
+}
+.button{
+    width: 100%;
+    margin: 5px 0;
+}
+.btn-login{
+    width: 100%;
+    margin: 2px;
+    display: flex;
+    color: white;
+}
+.btn-fg{
+    display: block;
+    width: 100%;
+}
+
+.fg{
+    position: absolute;
+    left: 20px;
+}
+.lg{
+    width: 50%; 
+}
+@media only screen and (max-width: 600px){
+    .login{
+        width: 100%;
+        padding: 40px 30px 80px 30px;
+        margin: 0%;
+        height: 100%;
+        border-radius: 0px;
+      }
+}
+
+@media only screen and (min-width: 600px) {
+    .login{
+        width: 500px;
+        margin: 0 auto;
+        padding-bottom: 50px;
+        padding-top: 50px;
+      }
+}
+@media only screen and (min-width: 900px) {
+    .login{
+        margin:auto;
+        width: 500px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+}
+@media only screen and (min-width: 1400px) {
+    .login{
+        margin:auto;
+        width: 500px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+}
+@media only screen and (min-width: 1600px) {
+    .login{
+        margin:20px auto;
+        width: 500px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+}

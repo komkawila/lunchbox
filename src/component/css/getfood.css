@@ -1,0 +1,225 @@
+.body-getfood{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    color: rgb(10, 157, 177);
+    border-radius: 20px;
+    border-style: solid;
+}
+.body-getfood hr{
+    width: 80%;
+    height: 5px;
+    margin: 10px auto;
+}
+.title{
+    text-align: center;
+    font-family:serif;
+    font-weight:bolder;
+    color: black;
+}
+.title hr{
+    width: 20%;
+}
+.cal-getfoods{
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cal-getfoods span{
+    background-image: linear-gradient(135deg, rgb(17, 29, 201) 0%, rgba(45, 32, 223, 0.5) 100%);
+    width: 20%;
+    height: 100px;
+    padding: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+}
+.cal-getfoods span p{ 
+    color: white;
+    font-size: 20px;
+    line-height: 0px;
+}
+.cal-getfoods span h1{
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: white;
+    line-height: 0px;
+}
+.data-rdi{
+    margin: auto;
+    padding: 10px;
+    width: 80%;
+    color: black;
+}
+.data-rdi div{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    height: 40px;
+    margin-top: 10px;
+}
+.data-rdi div h6{
+    padding-right: 15px;
+    margin-top: auto;
+    font-size: 24px;
+    margin-bottom: auto;
+    text-align: end;
+    width: 33.33%;
+}
+.data-rdi div progress{
+    height: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 33.33%;
+}
+.data-rdi div p{
+    padding-left: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 33.33%;
+}
+.data-rdi div h1{
+    padding-right: 20px;
+    text-align: end;
+    font-size: 32px;
+    font-weight: bold;
+    width: 100%;
+    height: auto;
+}
+.rdi-box{
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid rgb(10, 157, 177);
+    border-radius: 10px;
+    margin: 15px auto;
+    color: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 600px){
+    .body-getfood{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px;
+        color: rgb(10, 157, 177);
+        border-radius: 0;
+        border-style: none;
+    }
+    .body-getfood hr{
+        width: 100%;
+        height: 5px;
+        margin: 10px auto;
+    }
+    .title{
+        margin-top: 20px;
+        text-align: center;
+        font-family:serif;
+        font-weight:bolder;
+        color: black;
+    }
+    .title hr{
+        width: 20%;
+    }
+    .cal-getfoods{
+        display: flex;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cal-getfoods span{
+        background-image: linear-gradient(135deg, rgb(17, 29, 201) 0%, rgba(45, 32, 223, 0.5) 100%);
+        width: 22.5%;
+        height: 100px;
+        padding: 20px 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        text-align: center;
+        color: black;
+    }
+    .cal-getfoods span p{ 
+        color: white;
+        font-size: 20px;
+        line-height: 0px;
+    }
+    .cal-getfoods span h1{
+        font-size: 24px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: white;
+        line-height: 0px;
+    }
+    .data-rdi{
+        margin: auto;
+        padding: 10px;
+        width: 100%;
+        color: black;
+    }
+    .data-rdi div{
+        width: 100%;
+        display: flex;
+        margin: auto;
+        height: 40px;
+        margin-top: 0px;
+    }
+    .data-rdi div h6{
+        padding-right: 15px;
+        margin-top: auto;
+        font-size: 24px;
+        margin-bottom: auto;
+        text-align: end;
+        width: 33.33%;
+    }
+    .data-rdi div progress{
+        height: 20px;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 33.33%;
+    }
+    .data-rdi div p{
+        padding-left: 15px;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 33.33%;
+    }
+    .data-rdi div h1{
+        padding-right: 20px;
+        text-align: end;
+        font-size: 32px;
+        font-weight: bold;
+        width: 100%;
+        height: auto;
+    }
+    .rdi-box{
+        width: 80%;
+        text-align: center;
+        padding: 10px;
+        border: 2px solid rgb(10, 157, 177);
+        border-radius: 10px;
+        margin: 15px auto;
+        color: rgb(0, 0, 0);
+    }
+}
+
+@media only screen and (min-width: 600px) {
+}
+@media only screen and (min-width: 900px) {
+}
+@media only screen and (min-width: 1400px) {
+}
+@media only screen and (min-width: 1600px) {
+}

@@ -1,0 +1,25 @@
+.App {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    background-image: linear-gradient(135deg, rgb(5, 3, 97) 0%, rgba(24, 148, 185, 0.8) 100%);
+
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  .bt_start{
+    margin-left:-6%;
+  }
+  .Body {
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
