@@ -869,11 +869,10 @@ function Manegefood() {
             <Navbarmain />
             <div className="body-foods">
                 <div className="item-foods">
-
                     <div className="detial-foods">
                         <div className="title-foods">
                             <div className="title-food-imgs">
-                                <img src={immage} ></img>
+                                <img for="upload" src={immage} ></img>
                                 <div className="choose-file">
                                     <input type="file" hidden id="upload" onChange={onSelectImages} />
                                     <label for="upload">Choose file</label>
@@ -977,7 +976,7 @@ function Manegefood() {
                             })
                             }
                         </div>
-                        <button onClick={() => {
+                        {/* <button onClick={() => {
                             // setObjects2(objects);
                             console.log(objects);
                             // console.log(ob);
@@ -996,7 +995,7 @@ function Manegefood() {
                             console.log(price);
                         }
                         }>Saves</button>
-                        <hr></hr>
+                        <hr></hr> */}
 
                         <div className="sol-foods">
                             <h6>รายละเอียด</h6>

@@ -195,7 +195,7 @@
     .title-food p{
         margin-top: auto;
         margin-bottom: auto;
-        margin-left:100px;
+        margin-left:auto;
         font-size:20px;
     }
     .title-food div{
@@ -204,8 +204,7 @@
         font-weight: bold;
         font-size: 24px;
         margin-right: 5px;
-        margin-left: 10px;
-        background-color: rgb(255, 255, 255);
+        margin-left: 5px;
     }
     .title-food button{
         width: 70px;
@@ -221,14 +220,15 @@
     }
     .cal-food{
         display: flex;
+        width: 100%;
         background-color: rgb(255, 255, 255);
     }
     .cal-food span{
         background-image: linear-gradient(135deg, rgb(17, 29, 201) 0%, rgba(45, 32, 223, 0.5) 100%);
-        width: 100px;
+        width: 25%;
         height: 100px;
-        padding: 15px;
-        margin: 2px;
+        padding: 10px 10px;
+        margin: 1%;
         border-radius: 10px;
         text-align: center;
     }

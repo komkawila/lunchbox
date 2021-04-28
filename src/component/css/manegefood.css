@@ -17,7 +17,6 @@ input[type="number"] {
 .item-foods{
     display: flex;
     margin: auto;
-    background-color: rgb(255, 255, 255);
     padding: 10px ;
     width: 90%;
 }
@@ -32,7 +31,6 @@ input[type="number"] {
     border-radius: 20px;
     border-style: solid;
     color: rgb(64, 165, 224);
-    background-color: rgb(255, 255, 255);
 }
 .title-foods{
     display: flex;
@@ -42,7 +40,6 @@ input[type="number"] {
 .choose-file{
     display: flex;
     justify-content: center;
-    background-color: rgb(238, 235, 235);
     margin: auto;
     width: 500px;
     border-radius: 10px;
@@ -55,7 +52,6 @@ input[type="number"] {
     padding: 5px;
     font-size: 24px;
     margin-right: 10px;
-    background-color: rgb(238, 235, 235);
 }
 .cal-foods{
     display: flex;
@@ -98,7 +94,6 @@ input[type="number"] {
 }
 .material-foods p{
     padding-top: 12px;
-    background-color: rgb(255, 255, 255);
     width: 50px;
     font-size: 22px;
     margin-left: 30px;
@@ -158,7 +153,6 @@ input[type="number"] {
     font-size: 18px;
     margin-left: 5%;
     height: 100px;
-    border-color: black;
 }
 .title-food-imgs{
     display: block;
@@ -296,7 +290,6 @@ input[type=number] {
     margin-top: 0px;
     margin-left: auto;
     width: 440px;
-    background-color: rgb(252, 252, 252);
     margin-bottom: 20px;
 }
 .btn-save button{
@@ -308,4 +301,332 @@ input[type=number] {
     height: 50px;
     border-radius: 10px;
     background-color: rgb(20, 101, 139);
+}
+@media only screen and (max-width: 600px){
+    .body-foods{
+        margin-top: 0px;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+    .title-foods hr{
+        width: 100%;
+        margin: auto 20px auto 20px;
+        padding: 0;
+    }
+    .item-foods{
+        display: flex;
+        margin: auto;
+        padding: 0px ;
+        width: 100%;
+    }
+    
+    .img-foods img{
+        width: 100%;
+        height: 100%;
+    }
+    .detial-foods{
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        border-style: none;
+        color: rgb(64, 165, 224);
+    }
+    .title-foods{
+        display: flex;
+        max-height: 200px;
+        padding: 0px;
+        color: black;
+    }
+    .choose-file{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid black;
+        border-style: none;
+    }
+    .choose-file div{
+        display: none;
+    }
+    .cal-foods{
+        
+        display: flex;
+        margin: -10px 5px;
+    }
+    .cal-foods span{
+        background-image: linear-gradient(135deg, rgb(17, 29, 201) 0%, rgba(45, 32, 223, 0.5) 100%);
+        width: 23%;
+        height: 100px;
+        padding-top: 0px 0px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .cal-foods span p{ 
+        color: white;
+        font-size: 18px;
+        line-height: 0px;
+        margin-left: -6px;
+    }
+    .cal-foods span h1{
+        font-size: 24px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: white;
+        line-height: 0px;
+    }
+    .material-foods{
+        margin: -5px 5px 5px 5px;
+        padding: 0px;
+    }
+    .material-foods span h2{
+        display: none;
+    }
+    .material-foods h6{
+        font-size: 22px;
+        width: 105px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        color: rgb(53, 143, 202);
+    }
+    .material-foods p{
+        padding-top: 5px;
+        background-color: rgb(255, 255, 255);
+        width: 5%;
+        font-size: 22px;
+        margin-left: 0px;
+        color: rgb(0, 0, 0);
+    }
+    .material-foods div{
+        display: flex;
+        width: 98%;
+        padding-left: 5px;
+        margin-top: 10px;
+        margin-left: 0px;
+        color: rgb(0, 0, 0);
+    }
+    .material-foods h2{
+        display: flex;
+        margin-top: 10px;
+        margin-left: 30px;
+        font-size: 22px;
+        color: rgb(0, 0, 0);
+    }
+    .material-foods select{
+        font-size: 14px;
+        width: 35%;
+        padding-left: 5px;
+        border-color: black;
+        height: 40px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        margin-left: 5px;
+        color: rgb(0, 0, 0); 
+    }
+    
+    
+    
+    .material-foods input{
+        width: 15%;
+        height: 40px;
+        border-color: black;
+        font-size: 18px;
+        padding: 10px;
+        margin-left: 5px;
+        color: rgb(0, 0, 0);
+    }
+    .sol-foods{
+        margin: 0px;
+        padding: 5px;
+    }
+    .sol-foods h6{
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: rgb(53, 143, 202);
+    }
+    .sol-foods p{
+        margin-left: 30px;
+        color: rgb(0, 0, 0);
+    }
+    .sol-foods textarea{
+        width: 90%;
+        padding: 10px;
+        font-size: 18px;
+        margin-left: 10px;
+        height: 100px;
+        border-color: black;
+    }
+    .title-food-imgs{
+        display: block;
+        width: 120px;
+        text-align: center;
+        height: auto;
+        padding: 10px 5px;
+        background-color: none;
+    }
+    .title-food-imgs label{
+        background-color: rgb(37, 104, 37);
+        color: white;
+        height: 20%;
+        margin-top: 20px;
+        width: 200px;
+        padding: 10px;
+        /* padding: 0.5rem; */
+        font-family: sans-serif;
+        font-size: 12px;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    .title-food-imgs img{
+        padding: 0px;
+        width:auto;
+        height: 60%;
+        margin:0px;
+
+        border-radius: 10px;
+        border-style:dotted;
+    }
+    .title-food-items{
+        border-style: none;
+        width: 100%;
+        height: auto;
+    }
+    
+    .title-food-item-head{
+        width: 230px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5px;
+        height: auto;
+        display: flex;
+    }
+    .title-food-item-head p{
+        margin: 0 ;
+        color:teal;
+        font-size: 24px;
+    }
+    .title-food-item-name{
+        height: 25%;
+        display: flex;
+    }
+    .title-food-item-name p{
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 60%;
+        padding-left: 0px;
+        font-size: 32px;
+    }
+    .title-food-item-name input{
+        width: 40%;
+        border-radius: 10px;
+        margin-right: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+        height: 40px;
+        margin-left: auto;
+    }
+    .title-food-item-coin{
+        padding: 0px;
+    }
+    .title-food-item-coin span{
+        display: flex;
+        padding: 0px;
+        margin-top: 5px;
+        width: 100%;
+    }
+    .title-food-item-coin img{
+        height: 40px;
+        padding: 0px;
+        margin-right: 5px;
+        margin-left: 26%;
+        margin-top: auto;
+        margin-bottom: auto;
+        
+    }
+    .title-food-item-coin h1{
+        margin-left:auto;
+        width: auto;
+        margin-top: auto;
+        font-size: 18px;
+        margin-bottom: auto;
+    }
+    .title-food-item-coin input{
+        margin-left: auto;
+        margin-right: 10px;
+        width: 50%;
+        padding-left: 10px;
+        font-size: 24px;
+        height: 40px;
+        overflow-y: hidden;
+        border-color: black;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+      
+    }
+    
+    ::mousewheel
+    input[type=number] {
+      padding: 0 5px;
+    }
+    .material-foods span{
+        display: flex;
+    }
+    .material-foods span button{
+        margin-left: auto;
+        margin-right: 10px;
+        background-color: rgb(31, 143, 31);
+        font-size: 25px;
+        color: white;
+        border-style: none;
+        width: 35px;
+        line-height: 0px;
+        height: 35px;
+        border-radius: 50px;
+    }
+    .material-foods div button{
+        margin-left: 5px;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-weight: bold;
+        background-color: rgb(212, 18, 18);
+        font-size: 24px;
+        padding-top: -2px;
+        line-height: 8px;
+        color: white;
+        border-style: none;
+        width: 40px;
+        height: 30px;
+        border-radius: 50px;
+    }
+    .btn-save{
+        margin-top: 5px;
+        margin-left: auto;
+        width: 70%;
+        margin-bottom: 20px;
+    }
+    .btn-save button{
+        margin-left: 10px;
+        width: 40%;
+        border-style: none;
+        font-size: 20px;
+        color: white;
+        height: 50px;
+        border-radius: 10px;
+        background-color: rgb(20, 101, 139);
+    }
+    
 }

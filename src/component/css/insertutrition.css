@@ -117,7 +117,7 @@
     background-color: rgb(39, 94, 146);
 }
 
-@media only screen and (max-width: 360px){
+@media  screen and (max-width: 600px){
     .body-insertnutrition{
         /* display: block; */
         margin-top: 0;
@@ -131,7 +131,6 @@
         border-radius: 20px;
         border-style: none;
         /* overflow-y: scroll; */
-        background-color: wheat;
     }
     .h1{
         text-align: center;
@@ -161,7 +160,7 @@
     }
     
     .detial-insertnutrition span input{
-        width: auto;
+        width: 200px;
         height: 45px;
         border-radius: 5px;
         font-size: 24px;
@@ -237,7 +236,7 @@
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 360px) {
     .body-insertnutrition{
         /* display: block; */
         margin-top: 0;
@@ -280,7 +279,7 @@
     }
     
     .detial-insertnutrition span input{
-        width: auto;
+        width: 200px;
         height: 50px;
         border-radius: 5px;
         font-size: 24px;
@@ -354,10 +353,4 @@
         color: white;
         background-color: rgb(39, 94, 146);
     }
-}
-@media only screen and (min-width: 600px) {
-}
-@media only screen and (min-width: 1400px) {
-}
-@media only screen and (min-width: 1600px) {
 }
