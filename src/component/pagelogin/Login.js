@@ -1,7 +1,35 @@
 import React from 'react'
 import '../css/login.css'
-import { BrowserRouter, Route, Link, Router, Redirect,useHistory } from 'react-router-dom';
+import { BrowserRouter, Route, Link, Router, Redirect,useHistory ,useEffect} from 'react-router-dom';
 import logo from '../../img/login/logo1.png'
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import firebase from 'firebase';
+
+
+const config = {
+    apiKey: "AIzaSyAZyheJ6ihWLjoPJXW4X-LKUGjEtM7wY3c",
+    authDomain: "lunchbox-53965.firebaseapp.com",
+    projectId: "lunchbox-53965",
+    storageBucket: "lunchbox-53965.appspot.com",
+    messagingSenderId: "921824850689",
+    appId: "1:921824850689:web:336ab9087cc896e4aca100",
+    measurementId: "G-FY3S2G0GKB"
+  };
+  firebase.initializeApp(config);
+  
+  const uiConfig = {
+    signInFlow: 'popup',
+    signInSuccessUrl: '/signedIn',
+    signInOptions: [
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    ],
+    callbacks: {
+      signInSuccessWithAuthResult: () => false,
+    },
+  };
+
 function Login() {
     const history = useHistory();
 
@@ -48,7 +76,7 @@ function Login() {
                     <hr style={{ width: "100%", backgroundColor: "white", height: "2px", marginTop: "15px" }} />
                 </div>
                 <div className="btn-fg">
-                    <button class="button is-primary">
+                    {/* <button class="button is-primary">
                         <span class="icon fg">
                             <i class="fab fa-google-plus-square"></i>
 
@@ -60,7 +88,9 @@ function Login() {
                             <i class="fab fa-facebook-square"></i>
                         </span>
                         <span>Continure with Facebook</span>
-                    </button>
+                    </button> */}
+                    <StyledFirebaseAuth className="btn-loginall" uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+
                 </div>
 
             </div>

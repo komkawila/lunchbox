@@ -58,6 +58,31 @@
 .lg{
     width: 50%; 
 }
+.btn-loginall {
+    width: 100%;
+    padding: 0px 0px;
+
+}
+.btn-loginall button{
+    max-width: 100%;
+}
+
+.btn-loginall div{
+    text-align: center;
+    margin: 0px;
+    padding: 0px 0px;
+    max-width: 100%;
+}
+.btn-loginall span{
+    text-align: center;
+    padding-right: 100px;
+    max-width: 100%;
+}
+/* .firbaseui-idp-text span{
+    margin-left: 12px;
+    border: 1px solid black;
+    background-color: brown;
+} */
 @media only screen and (max-width: 600px){
     .login{
         width: 100%;
