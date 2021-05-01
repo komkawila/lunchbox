@@ -9,23 +9,94 @@ import fish from '../img/fish.png';
 import leaf from '../img/leaf.png';
 import meat from '../img/meat.png';
 import milk from '../img/milk.png';
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Link, Router, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
+import { BrowserRouter, Route, Link, Router, Redirect, useHistory } from 'react-router-dom';
+
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import firebase from 'firebase';
+import React, { useState, useEffect } from 'react';
+
 import { api } from './urlapi';
+import Swal from 'sweetalert2'
 
 function Home() {
-    const [foods, setFoods] = useState([]);
+    const history = useHistory();
 
-    var userid = 2;
+    const [statestore, setStateStore] = useState(0);
+    const [userid, setUserid] = useState(0);
+    const [isSignedIn, setIsSignedIn] = useState(false); // Local signed-in state.
+    const [user, setUser] = useState([]);
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 1000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
 
     useEffect(() => {
-        axios.get(api + "getfoods").then((res) => {
-            setFoods(res.data);
-        })
-        console.log(foods);
+        if (user != null) {
+            if (user.length != 0) {
+                console.log("Login Success");
+                console.log("user = ");
+                console.log(user);
+                console.log(user);
+                setTimeout(() => {
+                    axios.get(api + "login/" + user.uid).then((res) => {
+                        console.log("res = ");
+                        console.log(res.data[0]);
+                        setStateStore(res.data[0].status);
+                        setUserid(res.data[0].id_user);
+                    })
+                }, 1000);
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Signed in successfully'
+                })
+
+
+            }
+        } else {
+            // console.log("user = null");
+            // history.push("/login")
+        }
+    }, [user]);
+
+    useEffect(() => {
+        const unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
+            setIsSignedIn(!!user);
+            setUser(firebase.auth().currentUser);
+        });
+        return () => unregisterAuthObserver();
     }, []);
+    const [foods, setFoods] = useState([]);
+
+    // var userid = 2;
+
+    useEffect(() => {
+        if (statestore == 1) {
+            axios.get(api + "getfoodsusers/" + userid).then((res) => {
+                setFoods(res.data);
+                console.log("getfoodsuser === ");
+                console.log(res.data);
+            })
+            console.log(foods);
+        } else if (statestore == 2) {
+            axios.get(api + "getfoods").then((res) => {
+                setFoods(res.data);
+                console.log("getfoodsuser === ");
+                console.log(res.data);
+            })
+            console.log(foods);
+        }
+
+    }, [userid]);
 
     return (
         <div className="contianner">

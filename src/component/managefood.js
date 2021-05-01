@@ -8,10 +8,14 @@ import coin from '../img/coin.png'
 import noimmage from '../img/noimmage.png'
 import { api } from './urlapi';
 
+import Swal from 'sweetalert2'
 function Manegefood() {
     let history = useHistory();
     var str = "";
     str = history.location.search;
+    // str = history.location.search;
+    var userID = str.substr(str.indexOf("userid") + 7, str.length);
+    console.log("userID = " + userID);
     const [immage, setImmage] = useState(noimmage);
 
 
@@ -74,11 +78,11 @@ function Manegefood() {
     const [price, setPrice] = useState(Number);
     const [detail, setDetial] = useState("");
     ///////////////////////new/////////////////
-    var store_id = 2;
+    // var store_id = 2;
     const saveFunc = async () => {
         // await 
         await axios.post(api + "insertfood", {
-            store_id: store_id,
+            store_id: userID,
             name_thai: foodname,
             price: price,
             energy: energy,
@@ -89,6 +93,13 @@ function Manegefood() {
             descrition: detail,
         }).then((res) => {
             console.log("###### SAVE ######");
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'บัททึกสำเร็จ',
+                showConfirmButton: true,
+            });
+
             UploadImmage(res.data);
             console.log(objects);
             console.log(detail);
@@ -98,6 +109,7 @@ function Manegefood() {
             console.log(carb);
             console.log(foodname);
             console.log(price);
+            history.push("/menu");
         })
 
 

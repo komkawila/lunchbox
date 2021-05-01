@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../css/login.css'
-import { BrowserRouter, Route, Link, Router, Redirect,useHistory ,useEffect} from 'react-router-dom';
+import { BrowserRouter, Route, Link, Router, Redirect, useHistory } from 'react-router-dom';
 import logo from '../../img/login/logo1.png'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase';
 
+import axios from 'axios';
 
+import { api } from '../urlapi';
 const config = {
     apiKey: "AIzaSyAZyheJ6ihWLjoPJXW4X-LKUGjEtM7wY3c",
     authDomain: "lunchbox-53965.firebaseapp.com",
@@ -14,33 +16,66 @@ const config = {
     messagingSenderId: "921824850689",
     appId: "1:921824850689:web:336ab9087cc896e4aca100",
     measurementId: "G-FY3S2G0GKB"
-  };
-  firebase.initializeApp(config);
-  
-  const uiConfig = {
+};
+firebase.initializeApp(config);
+
+const uiConfig = {
     signInFlow: 'popup',
     signInSuccessUrl: '/signedIn',
     signInOptions: [
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-      firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
     ],
     callbacks: {
-      signInSuccessWithAuthResult: () => false,
+        signInSuccessWithAuthResult: () => false,
     },
-  };
+};
 
 function Login() {
     const history = useHistory();
 
-    const clickLogin = ()=>{
+    const clickLogin = () => {
         console.log("login");
     }
-    const clickRegistor = ()=>{
+    const clickRegistor = () => {
         console.log("registor");
         history.push("/registor")
     }
+
+    const [isSignedIn, setIsSignedIn] = useState(false); // Local signed-in state.
+    const [user, setUser] = useState([]);
+
+    useEffect(() => {
+        if (user != null) {
+            if (user.length != 0) {
+                console.log("Login Success");
+                console.log("user = ");
+                console.log(user.uid);
+                //   history.push("/home")
+                axios.get(api + "login/"+user.uid).then((res) => {
+                    console.log("res = ");
+                    console.log(res.data);
+                    if(res.data.length != 0){
+                        history.push("/home")
+                    }else{
+                        history.push("/registor")
+                    }
+                })
+            }
+        }
+    }, [user]);
+
+    useEffect(() => {
+        const unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
+            setIsSignedIn(!!user);
+            setUser(firebase.auth().currentUser);
+        });
+        return () => unregisterAuthObserver();
+    }, []);
+
     return (
+
         <div className="container-login">
             <div className="box login">
                 <div className="login-img">
@@ -66,8 +101,8 @@ function Login() {
                     </p>
                 </div>
                 <div className="btn-login">
-                    <button className="button is-link lg " style={{ marginRight: "5px" }} onClick={()=>{clickLogin()}}>Login</button>
-                    <button className="button is-success lg " style={{ marginLeft: "5px" }} onClick={()=>{clickRegistor()}}>Register</button>
+                    <button className="button is-link lg " style={{ marginRight: "5px" }} onClick={() => { clickLogin() }}>Login</button>
+                    <button className="button is-success lg " style={{ marginLeft: "5px" }} onClick={() => { clickRegistor() }}>Register</button>
 
                 </div>
                 <div className="or">

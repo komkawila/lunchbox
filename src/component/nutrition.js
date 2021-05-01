@@ -10,8 +10,48 @@ import coin from '../img/coin.png'
 import gda from '../img/GDA.png'
 import ReactDOM from "react-dom";
 
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import firebase from 'firebase';
 
 function Nutrition() {
+
+    const history = useHistory();
+
+    const [isSignedIn, setIsSignedIn] = useState(false); // Local signed-in state.
+    const [user, setUser] = useState([]);
+    const [userid, setUserid] = useState(0);
+
+    useEffect(() => {
+        if (user != null) {
+            if (user.length != 0) {
+                console.log("Login Success");
+                console.log("user = ");
+                console.log(user);
+                console.log(user);
+                axios.get(api + "login/" + user.uid).then((res) => {
+                    // console.log("res = ");
+                    setUserid(res.data[0].id_user);
+                })
+                // Toast.fire({
+                //     icon: 'success',
+                //     title: 'Signed in successfully'
+                // })
+            }
+        } else {
+            console.log("user = null");
+            history.push("/login")
+        }
+    }, [user]);
+
+    useEffect(() => {
+        const unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
+            setIsSignedIn(!!user);
+            setUser(firebase.auth().currentUser);
+        });
+        return () => unregisterAuthObserver();
+    }, []);
+
+
     const [searchTerm, setSearchTerm] = React.useState("");
     const [searchResults, setSearchResults] = React.useState([]);
     const handleChange = event => {
@@ -20,7 +60,10 @@ function Nutrition() {
     const [count, setCount] = useState(0)
     const [foods, setFoods] = useState([]);
     // const [textfood, setTextFood] = useState([]);
-    var userid = 2;
+
+
+
+    // var userid = 2;
     useEffect(() => {
         // console.log("data = ");
         const textfood = [];
@@ -78,7 +121,7 @@ function Nutrition() {
                         }}
                         style={{textDecoration: "none"}}>
                             <div className="item-search" key={item}>
-                                <a>{item} (แกงเขียวหวานไก่) 450 kcal </a>
+                                <a>{item} </a>
                             </div>
                             
                     </Link>

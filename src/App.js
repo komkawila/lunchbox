@@ -17,6 +17,8 @@ import Login from './component/pagelogin/Login';
 import Registor from './component/pagelogin/Registor';
 import Registorstore from './component/pagelogin/Registorstore';
 import Registoradmin from './component/pagelogin/Registoradmin';
+import ProfileStore from './component/profile/ProfileStore';
+import ProfileAdmins from './component/profile/ProfileAdmin';
 function App() {
     return (
         <div >
@@ -36,6 +38,8 @@ function App() {
                 <Route exact path="/nutrition" component={Nutrition}></Route>
                 <Route exact path="/insert-nutrition" component={Insertutrition}></Route>
                 <Route exact path="/getfood" component={Getfood}></Route>
+                <Route exact path="/profile-store" component={ProfileStore}></Route>
+                <Route exact path="/profile-admin" component={ProfileAdmins}></Route>
 
             </div>
         </div>
