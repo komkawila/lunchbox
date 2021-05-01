@@ -19,6 +19,7 @@ import Registorstore from './component/pagelogin/Registorstore';
 import Registoradmin from './component/pagelogin/Registoradmin';
 import ProfileStore from './component/profile/ProfileStore';
 import ProfileAdmins from './component/profile/ProfileAdmin';
+import MenuStore from './component/menustore';
 function App() {
     return (
         <div >
@@ -34,6 +35,7 @@ function App() {
                 <Route exact path="/home" component={Home}></Route>
                 <Route exact path="/foods" component={Foods}></Route>
                 <Route exact path="/menu" component={Menu}></Route>
+                <Route exact path="/menu-store" component={MenuStore}></Route>
                 <Route exact path="/menagefood" component={Menagefood}></Route>
                 <Route exact path="/nutrition" component={Nutrition}></Route>
                 <Route exact path="/insert-nutrition" component={Insertutrition}></Route>

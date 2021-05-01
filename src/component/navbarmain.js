@@ -18,6 +18,7 @@ function Navbars(props) {
 
     const [userobj, setUserobj] = useState(0);
 
+    const [statestore, setStateStore] = useState(0);
     const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -84,11 +85,17 @@ function Navbars(props) {
                     <ul >
                         <Link to="/home"><li ><h1 className="lch1">Lunchbox</h1></li></Link>
                         <Link to="/home"><li ><h1 className="lch2">Home</h1></li></Link>
-                        <Link to={{
+                        
+                        {(userobj.status == 1) ? <Link to={{
                             pathname: "/menu",
                             // search: "?userid=" + props.userid,
                             state: { fromDashboard: true }
-                        }}><li>Menu</li></Link>
+                        }}><li>Menu</li></Link>:<Link to={{
+                            pathname: "/menu-store",
+                            // search: "?userid=" + props.userid,
+                            state: { fromDashboard: true }
+                        }}><li>Menu</li></Link>}
+
                         <Link to="nutrition"><li >Nutrition</li></Link>
 
                     </ul>

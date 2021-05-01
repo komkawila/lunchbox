@@ -1,0 +1,75 @@
+.body-MenuStore{
+    /* display: block; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    color: rgb(10, 157, 177);
+    border-radius: 20px;
+    border-style: solid;
+    text-align: center;
+    /* overflow-y: scroll; */
+    /* background-color: wheat; */
+}
+.body-MenuStore h1{
+    margin: 20px;
+    font-size: 36px;
+}
+.head-MenuStore{
+    /* border-style: solid; */
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    /* background-color: violet; */
+    
+}
+.head-MenuStore div{
+    /* border-style: solid; */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: blue;
+    /* background-color: violet; */
+}
+
+.head-MenuStore input{
+    width: 90%;
+    padding: 10px;
+    margin-bottom: -20px;
+    font-size: 20px;
+    border-radius: 10px;
+    border-color: black;
+}
+.result-MenuStore{
+    margin-top: -20px;
+    text-align: start;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.result-MenuStore h2{
+    font-size: 28px;
+}
+.storeName-map{
+    display: flex;
+    background-color: rgb(14, 161, 194);
+    width: 70%;
+    border-radius: 10px;
+    margin-left: 15%;
+    margin-top: 2%;
+    padding: 2%;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+.storeName-map p{
+    font-size: 24px;
+    margin-right: 5%;
+}
+.storeName-map:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(14, 161, 194);
+    border: 2px solid rgb(14, 161, 194);
+}
+

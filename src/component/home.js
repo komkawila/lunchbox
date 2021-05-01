@@ -1,14 +1,14 @@
 import './css/home.css';
 
 import Navbarmain from './navbarmain';
-import apple from '../img/apple.png';
-import carrot from '../img/carrot.png';
-import breakfast from '../img/breakfast.png';
-import egg from '../img/egg.png';
-import fish from '../img/fish.png';
-import leaf from '../img/leaf.png';
-import meat from '../img/meat.png';
-import milk from '../img/milk.png';
+import apple from '../img/apple.jpg';
+import carrot from '../img/carrot.jpg';
+import breakfast from '../img/breakfast.jpg';
+import egg from '../img/egg.jpg';
+import fish from '../img/fish.jpg';
+import leaf from '../img/leaf.jpg';
+import meat from '../img/meat.jpg';
+import milk from '../img/milk.jpg';
 import axios from 'axios';
 
 import { BrowserRouter, Route, Link, Router, Redirect, useHistory } from 'react-router-dom';

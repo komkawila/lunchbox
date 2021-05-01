@@ -13,9 +13,10 @@ import gda from '../img/GDA.png'
 function Menu() {
     let history = useHistory();
     var str = "";
+    const [historyid, setHistoryid] = useState(0);
     // str = history.location.search;
-    // var userID = str.substr(str.indexOf("userid") + 7, str.length);
-    // console.log("userID = " + userID);
+    // var id_user = str.substr(str.indexOf("id_user") + 7, str.length);
+    // console.log("id_user = " + id_user);
     const [statestore, setStateStore] = useState(0);
     const [foods, setFoods] = useState([]);
     const [userID, setUserid] = useState(0);
@@ -43,6 +44,8 @@ function Menu() {
     }, [user]);
 
     useEffect(() => {
+        str = history.location.search;
+        setHistoryid(str.substr(str.indexOf("id_user") + 8, str.length));
         const unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
             setIsSignedIn(!!user);
             setUser(firebase.auth().currentUser);
@@ -51,12 +54,20 @@ function Menu() {
     }, []);
 
     useEffect(() => {
+
+        console.log("historyid = " + historyid);
+    }, [historyid]);
+
+
+    useEffect(() => {
         // axios.get(api + "getfoodsusers/" + userID).then((res) => {
         //     setFoods(res.data);
         // })
         // console.log(foods);
+        if (historyid != 0) {
 
-        
+        }
+
         if (statestore == 1) {
             axios.get(api + "getfoodsusers/" + userID).then((res) => {
                 setFoods(res.data);
@@ -65,14 +76,14 @@ function Menu() {
             })
             console.log(foods);
         } else if (statestore == 2) {
-            axios.get(api + "getfoods").then((res) => {
+            axios.get(api + "getfoodsusers/" + historyid).then((res) => {
                 setFoods(res.data);
                 console.log("getfoodsuser === ");
                 console.log(res.data);
             })
             console.log(foods);
         }
-        
+
     }, [userID]);
 
     const deleteFoods = (id_food) => {
