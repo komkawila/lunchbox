@@ -132,7 +132,7 @@ function Registoradmin() {
                         <p> ชื่อ - นามสกุล</p>
                         <input class="input" type="text" value={nameA} disabled></input>
                         <p> โทรศัพท์มือถือ</p>
-                        <input class="input" type="number" placeholder="โทรสัพท์มือถือ" onWheelCapture={e => { e.target.blur() }} value={phoneNumberA} onChange={e => { setphoneNumberA(e.target.value) }}></input>
+                        <input class="input" type="number" placeholder="โทรศัพท์มือถือ" onWheelCapture={e => { e.target.blur() }} value={phoneNumberA} onChange={e => { setphoneNumberA(e.target.value) }}></input>
                         <p> เพศ</p>
                         <div className="select ip-rgt">
                             <select className="ip-rgt" value={sexA} onChange={e => { setsexA(e.target.value) }}>

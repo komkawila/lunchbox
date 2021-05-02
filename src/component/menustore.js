@@ -11,16 +11,7 @@ import { api } from './urlapi';
 import coin from '../img/coin.png'
 import gda from '../img/GDA.png'
 import '../component/css/menu-store.css'
-const storeName = [
-    "aaaaaaaaaaaaaaaa",
-    "bbbbbbbbbbbbbbbb",
-    "cccccccccccccccc",
-    "dddddddddddddddd",
-    "eeeeeeeeeeeeeeee",
-    "ffffffffffffffff",
-    "gggggggggggggggg",
-    "hhhhhhhhhhhhhhhh"
-]
+
 function MenuStore() {
     let history = useHistory();
     var str = "";

@@ -1,14 +1,14 @@
 
 import './css/getfood.css';
-import { BrowserRouter, Route, Link, Router, Redirect, useHistory } from 'react-router-dom';
+// import { BrowserRouter, Route, Link, Router, Redirect, useHistory } from 'react-router-dom';
 
 import React, { useState, useEffect } from 'react';
 import Navbarmain from './navbarmain';
 import axios from 'axios';
 import { api } from './urlapi';
-import coin from '../img/coin.png'
-import gda from '../img/GDA.png'
-import ReactDOM from "react-dom";
+// import coin from '../img/coin.png'
+// import gda from '../img/GDA.png'
+// import ReactDOM from "react-dom";
 
 const people = [
     "Siri",

@@ -75,8 +75,6 @@ function Navbars(props) {
         } else if (userobj.status == 2) {
             history.push("/profile-admin")
         }
-
-
     }
     return (
         <div>
@@ -100,11 +98,11 @@ function Navbars(props) {
 
                     </ul>
                 </nav>
-                <form>
+                {/* <form>
                     <input className="form-control" type="text" placeholder="Search" />
                     <button type="submit" >Search</button>
 
-                </form>
+                </form> */}
                 <div className="dropdown">
                     <input type="checkbox" id="checkbox_toggle" />
                     <label for="checkbox_toggle"><i class="fas fa-user"></i></label>

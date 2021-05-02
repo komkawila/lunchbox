@@ -1,0 +1,107 @@
+.body-ingredients{
+    /* display: block; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    color: rgb(10, 157, 177);
+    border-radius: 20px;
+    border-style: solid;
+    text-align: center;
+    /* overflow-y: scroll; */
+    /* background-color: wheat; */
+}
+.body-ingredients h1{
+    margin: 20px;
+    font-size: 36px;
+}
+.head-ingredients{
+    /* border-style: solid; */
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    /* background-color: violet; */
+    
+}
+.head-ingredients div{
+    /* border-style: solid; */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: blue;
+    /* background-color: violet; */
+}
+
+.head-ingredients input{
+    width: 90%;
+    padding: 10px;
+    margin-bottom: -20px;
+    font-size: 20px;
+    border-radius: 10px;
+    border-color: black;
+}
+.result-ingredients{
+    margin-top: -20px;
+    text-align: start;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.result-ingredients h2{
+    font-size: 28px;
+}
+.ingredients-map{
+    display: flex;
+    background-color: rgb(14, 161, 194);
+    width: 70%;
+    border-radius: 10px;
+    margin-left: 15%;
+    margin-top: 2%;
+    padding: 2%;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+.ingredients-map p{
+    font-size: 24px;
+    margin-right: 5%;
+}
+.ingredients-map:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(14, 161, 194);
+    border: 2px solid rgb(14, 161, 194);
+}
+
+.body-ingredients table{
+    width: 80%;
+    margin: 20px auto;
+}
+.body-ingredients table thead tr th:nth-of-type(1){
+    width: 5%;
+}
+.body-ingredients table thead tr th:nth-of-type(2){
+    width: 50%;
+}
+.body-ingredients table thead tr th:nth-of-type(3){
+    width: 10%;
+}
+.body-ingredients table thead tr th:nth-of-type(4){
+    width: 8.75%;
+}
+.body-ingredients table thead tr th:nth-of-type(5){
+    width: 8.75%;
+}
+.body-ingredients table thead tr th:nth-of-type(6){
+    width: 8.75%;
+}
+.body-ingredients table thead tr th:nth-of-type(7){
+    width: 8.75%;
+}
+.tbody-data td:nth-of-type(2){
+    text-align: start;
+}
+.tbody-data:hover{
+    color: rgb(14, 161, 194);
+    cursor: pointer;
+}

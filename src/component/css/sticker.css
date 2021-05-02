@@ -1,0 +1,48 @@
+.sticker-kal{
+    width: 210mm;
+    max-height: 297mm; 
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+.content-sticker{
+    box-sizing: border-box;
+    padding: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgb(19, 18, 18);
+    padding: 3px;
+}
+.content-sticker div{
+    text-align: center;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgb(25, 151, 173);
+    height: 50px;
+    color: white;
+    font-size: 32px;
+}
+.kal-stk{
+    margin-top: 3px;
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    column-gap: 3px;
+}
+.kal-stk span{
+    padding: 5px;
+    background-color: white;
+}
+.kal-stk span p{
+    line-height: 22px;
+}
+@media print {
+    .content-sticker {
+        background-color: rgb(19, 18, 18) !important;
+        -webkit-print-color-adjust: exact; 
+    }
+}

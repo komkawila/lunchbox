@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Route, Link, Router, Redirect } from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import Home from './component/home';
 import Foods from './component/foods';
 import navbarmain from './component/navbarmain';
@@ -20,6 +20,8 @@ import Registoradmin from './component/pagelogin/Registoradmin';
 import ProfileStore from './component/profile/ProfileStore';
 import ProfileAdmins from './component/profile/ProfileAdmin';
 import MenuStore from './component/menustore';
+import Sticker from './component/Sticker';
+import Igredients from './component/ingredients';
 function App() {
     return (
         <div >
@@ -42,6 +44,8 @@ function App() {
                 <Route exact path="/getfood" component={Getfood}></Route>
                 <Route exact path="/profile-store" component={ProfileStore}></Route>
                 <Route exact path="/profile-admin" component={ProfileAdmins}></Route>
+                <Route exact path="/sticker" component={Sticker}></Route>
+                <Route exact path="/ingredients" component={Igredients}></Route>
 
             </div>
         </div>

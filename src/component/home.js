@@ -28,11 +28,37 @@ function Home() {
     const [isSignedIn, setIsSignedIn] = useState(false); // Local signed-in state.
     const [user, setUser] = useState([]);
 
+    const [types, setTypes] = useState([]);
+    const [typesstate, setTypesstate] = useState(false);
+    var arrayypes = [];
+
+    useEffect(() => {
+        axios.get(api + "gettype").then((res) => {
+            setTypes(res.data);
+            (res.data).map((res2) => {
+                arrayypes.push(res2);
+            });
+            // console.log("arrayypes ");
+            // console.log(arrayypes);
+            // arrayypes.push(res.data);
+            // console.log("types   ");
+            // console.log(res.data);
+        });
+    }, []);
+
+    // useEffect(() => {
+
+    //     console.log("types   ");
+    //     console.log(types);
+    //     console.log("arrayypes   ");
+    //     console.log(arrayypes);
+    // }, [types]);
+
     const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
-        timer: 1000,
+        timer: 500,
         timerProgressBar: true,
         didOpen: (toast) => {
             toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -54,13 +80,11 @@ function Home() {
                         setStateStore(res.data[0].status);
                         setUserid(res.data[0].id_user);
                     })
-                }, 1000);
+                }, 0);
                 Toast.fire({
                     icon: 'success',
                     title: 'Signed in successfully'
                 })
-
-
             }
         } else {
             // console.log("user = null");
@@ -98,6 +122,7 @@ function Home() {
 
     }, [userid]);
 
+
     return (
         <div className="contianner">
             <Navbarmain userid={userid} />
@@ -118,45 +143,53 @@ function Home() {
                     ))
                 }
             </div>
+
             <div className="icon-area">
                 <div className="icon-area1">
-                    <div className="icon-item">
+                    {/* <Link to={{
+                        pathname: "/ingredients",
+                        search: "?ingredients=1"
+                    }}>
+                        </Link> */}
+                        
+                    <div onClick={()=>history.push("/ingredients?id=4")} className="icon-item">
                         <img className="box" src={carrot} />
                         <p>ผัก</p>
                     </div>
-                    <div className="icon-item">
+                    <div onClick={()=>history.push("/ingredients?id=5")} className="icon-item">
                         <img className="box" src={apple} />
                         <p>ผลไม้</p>
                     </div>
-                    <div className="icon-item">
+                    <div onClick={()=>history.push("/ingredients?id=1")} className="icon-item">
                         <img className="box" src={breakfast} />
                         <p>ธัญพืช</p>
                     </div>
-                    <div className="icon-item">
+                    <div onClick={()=>history.push("/ingredients?id=10")} className="icon-item">
                         <img className="box" src={leaf} />
-                        <p>สมุมไพร</p>
+                        <p>เครื่องเทศ</p>
                     </div>
                 </div>
                 <div className="icon-area2">
-                    <div className="icon-item">
+                    <div onClick={()=>history.push("/ingredients?id=6")} className="icon-item">
                         <img className="box" src={meat} />
-                        <p>เนื้อสัตว์</p>
+                        <p>เนื้อ</p>
                     </div>
-                    <div className="icon-item">
+                    <div onClick={()=>history.push("/ingredients?id=7")} className="icon-item">
                         <img className="box" src={fish} />
                         <p>ปลา</p>
                     </div>
-                    <div className="icon-item">
+                    <div onClick={()=>history.push("/ingredients?id=8")} className="icon-item">
                         <img className="box" src={egg} />
                         <p>ไข่</p>
                     </div>
-                    <div className="icon-item">
+                    <div onClick={()=>history.push("/ingredients?id=9")} className="icon-item">
                         <img className="box" src={milk} />
                         <p>นม</p>
                     </div>
                 </div>
-
             </div>
+
+
         </div>
     );
 }

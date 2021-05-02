@@ -20,6 +20,7 @@ function Nutrition() {
     const [isSignedIn, setIsSignedIn] = useState(false); // Local signed-in state.
     const [user, setUser] = useState([]);
     const [userid, setUserid] = useState(0);
+    const [userstatus, setUserstatus] = useState(0);
 
     useEffect(() => {
         if (user != null) {
@@ -31,6 +32,7 @@ function Nutrition() {
                 axios.get(api + "login/" + user.uid).then((res) => {
                     // console.log("res = ");
                     setUserid(res.data[0].id_user);
+                    setUserstatus(res.data[0].status);
                 })
                 // Toast.fire({
                 //     icon: 'success',
@@ -67,13 +69,21 @@ function Nutrition() {
     useEffect(() => {
         // console.log("data = ");
         const textfood = [];
-        axios.get(api + "getfoodsusers/" + userid).then((res) => {
-            const { data } = res;
-            setFoods(data);
-        })
+        if(userstatus == 1){
+            axios.get(api + "getfoodsusers/" + userid).then((res) => {
+                const { data } = res;
+                setFoods(data);
+            })
+        }else if(userstatus == 2){
+            axios.get(api + "getfoods").then((res) => {
+                const { data } = res;
+                setFoods(data);
+            })
+        }
+        
         if (searchTerm === "") {
             console.log("error")
-            textfood.pop();
+            // textfood.pop();
         } else {
             foods.map(data => {
                 textfood.push(data.name_thai);
@@ -83,8 +93,8 @@ function Nutrition() {
 
 
         console.log("data = " + textfood)
-        const resultsx = textfood.filter(person =>
-            person.toLowerCase().includes(searchTerm)
+        const resultsx = textfood.filter(data =>
+            data.toLowerCase().includes(searchTerm)
         );
         setSearchResults(resultsx);
         // console.log(foods);

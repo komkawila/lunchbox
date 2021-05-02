@@ -178,7 +178,7 @@ function Registorstore() {
                         <p> โทรศัพท์มือถือ</p>
                         <input class="input ip-rgt"
                             type="number"
-                            placeholder="โทรสัพท์มือถือ"
+                            placeholder="โทรศัพท์มือถือ"
                             value={phoneNumberS}
                             onChange={(e) => {
                                 setphoneNumberS(e.target.value);
