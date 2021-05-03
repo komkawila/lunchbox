@@ -89,9 +89,9 @@ function Foods() {
                             <div className="detial-food">
                                 <div className="title-food">
                                     <div>{data.name_thai} :</div>
-                                    <p >ราคา</p>
+                                    <p >ราคา {data.price}</p>
                                     <div><img src={coin} style={{width: 30,height: 30}}/> </div>
-                                    <button onClick={btn}>edit</button>
+                                    <button onClick={()=>{history.push("editfood?userid="+userID+"&foodid="+foodID)}}>edit</button>
                                 </div>
                                 <hr/>
                                 <div className="cal-food">
@@ -122,10 +122,11 @@ function Foods() {
                                     {ingredients.map((data, key) => {
                                         return (
                                             <div style={{ display: "flex" ,marginTop:"20px"}}>
-                                                <div className="n-foods" >{key + 1}. {data.name_thai}</div>
+                                                <p className="pp-foods"> {key + 1}.</p>
+                                                <p className="n-foods" > {data.name_thai}</p>
                                                 <div className="na-foods" >{data.ingredient_value}</div>
                                                 <div className="u-foods" >{data.unit}</div>
-                                                <div className="p-foods" >ราคา</div>
+                                                <div className="p-foods" >ราคา {data.price}</div>
                                                 <img className="im-foods" src={coin} style={{width: 30,height: 30}}/> 
                                             </div>
                                             

@@ -10,13 +10,24 @@ import { api } from './urlapi';
 
 import Swal from 'sweetalert2'
 function Manegefood() {
+    // const [foodsid, setFoodsid] = useState(190);
     let history = useHistory();
     var str = "";
     str = history.location.search;
     // str = history.location.search;
-    var userID = str.substr(str.indexOf("userid") + 7, str.length);
-    console.log("userID = " + userID);
+    // var userID = str.substr(str.indexOf("userid") + 7, str.length);
+    var userID = str.substring(str.indexOf("userid") + 7, str.indexOf("&"));
+    var foodsid =str.substring(str.indexOf("foodid") + 7, str.length);
+    // console.log("userID = " + userID);
+    // console.log("foodsid2 : ");
+    // console.log(foodsid2);
     const [immage, setImmage] = useState(noimmage);
+
+
+    // setFoodsid(str.substring(str.indexOf("kcal") + 5, str.indexOf("&", str.indexOf("kcal"))));
+    // setProtein(str.substring(str.indexOf("prot") + 5, str.indexOf("&", str.indexOf("prot"))));
+    // setFat(str.substring(str.indexOf("fat") + 4, str.indexOf("&", str.indexOf("fat"))));
+    // setFoodsid(str.substring(str.indexOf("foodsid") + 7, str.length));
 
 
     const [file, setFile] = useState("");
@@ -25,9 +36,9 @@ function Manegefood() {
         setFile(e.target.files[0]);
         setFilename(e.target.files[0].name);
 
-        console.log("files = ");
-        console.log(e.target.files[0]);
-        console.log("filesName = " + e.target.files[0].name);
+        // console.log("files = ");
+        // console.log(e.target.files[0]);
+        // console.log("filesName = " + e.target.files[0].name);
     };
 
     const UploadImmage = async (e) => {
@@ -44,13 +55,85 @@ function Manegefood() {
         );
     }
 
+    const [count, setCount] = useState(0);
 
+    const [foodsapi, setFoodsapi] = useState([]);
+    const [ingredientsfoodsapi, setIngredientsfoodsapi] = useState([]);
+    const [stateapi, setStateapi] = useState(false);
+
+    const [objects, setObjects] = useState([]);
+
+    const [energy, setEnergy] = useState(0);
+    const [protein, setProtein] = useState(0);
+    const [fat, setFat] = useState(0);
+    const [carb, setCarb] = useState(0);
+
+    ///////////////////////new/////////////////
+    const [foodname, setFoodname] = useState("");
+    const [price, setPrice] = useState(0);
+    const [price2, setPrice2] = useState(0);
+    const [detail, setDetial] = useState("");
+    const [priceNutrition, setPriceNutrition] = useState(0);
+    useEffect(() => {
+        axios.get(api + "getfoods/" + foodsid).then((res) => {
+            console.log("res.data   ");
+            console.log(res.data);
+            setFoodsapi(res.data);
+            setFoodname(res.data[0].name_thai);
+            setPrice2(res.data[0].price);
+            setEnergy(res.data[0].energy);
+            setProtein(res.data[0].protein);
+            setFat(res.data[0].fat);
+            setCarb(res.data[0].carbohydrate);
+            setDetial(res.data[0].descrition);
+        }).then(axios.get(api + "getingredientsfoods/" + foodsid).then((res) => {
+            setIngredientsfoodsapi(res.data);
+            setStateapi(true);
+        }));
+    }, [])
+    // setFoodname
+    useEffect(() => {
+        if (stateapi) {
+            console.log("foodsapi : ");
+            console.log(foodsapi);
+            console.log("ingredientsfoodsapi : ");
+            console.log(ingredientsfoodsapi);
+
+            var obnew = [];
+            ingredientsfoodsapi.map((res, key) => {
+                var data = res;
+                var id = 0;
+                {
+                    axios.get(api + "getingredients/" + data.id_ingredient).then((res2) => {
+                        // console.log("getingredients/" + data.id_ingredient);
+                        // console.log(res.data[0].type_id);
+                        id = res2.data[0].type_id;
+                        obnew.push({
+                            indexs: key,
+                            types: id,
+                            ingredient: res.id_ingredient,
+                            units: res.ingredient_value,
+                            unitperunit: "g",
+                            energy: 0,
+                            protein: 0,
+                            fat: 0,
+                            carbohydrate: 0,
+                            price: res.price
+                        });
+                        setCount(key + 1);
+                    })
+                }
+                console.log("id = ");
+                console.log(id);
+
+            });
+            setObjects(obnew);
+        }
+    }, [stateapi])
 
 
     const [ingredientstype, setIngredientstype] = useState([]);
-    const [count, setCount] = useState(0);
 
-    const [objects, setObjects] = useState([]);
 
     const [type1, setType1] = useState([]);
     const [type2, setType2] = useState([]);
@@ -68,22 +151,11 @@ function Manegefood() {
     const [type14, setType14] = useState([]);
     const [type15, setType15] = useState([]);
 
-    const [energy, setEnergy] = useState(0);
-    const [protein, setProtein] = useState(0);
-    const [fat, setFat] = useState(0);
-    const [carb, setCarb] = useState(0);
-
-    ///////////////////////new/////////////////
-    const [foodname, setFoodname] = useState("");
-    const [price, setPrice] = useState(0);
-    const [price2, setPrice2] = useState(0);
-    const [detail, setDetial] = useState("");
-    const [priceNutrition, setPriceNutrition] = useState(0);
     ///////////////////////new/////////////////
     // var store_id = 2;
     const saveFunc = async () => {
         // await 
-        await axios.post(api + "insertfood", {
+        await axios.post(api + "updatefood", {
             store_id: userID,
             name_thai: foodname,
             price: price2,
@@ -93,8 +165,9 @@ function Manegefood() {
             carbohydrate: carb,
             objects: objects,
             descrition: detail,
+            id_food: foodsid,
         }).then((res) => {
-            console.log("###### SAVE ######");
+            // console.log("###### SAVE ######");
             Swal.fire({
                 position: 'center',
                 icon: 'success',
@@ -103,14 +176,14 @@ function Manegefood() {
             });
 
             UploadImmage(res.data);
-            console.log(objects);
-            console.log(detail);
-            console.log(energy);
-            console.log(protein);
-            console.log(fat);
-            console.log(carb);
-            console.log(foodname);
-            console.log(price);
+            // console.log(objects);
+            // console.log(detail);
+            // console.log(energy);
+            // console.log(protein);
+            // console.log(fat);
+            // console.log(carb);
+            // console.log(foodname);
+            // console.log(price);
             history.push("/menu");
         })
 
@@ -211,7 +284,7 @@ function Manegefood() {
         axios.get(api + "gettype").then((res) => {
             setIngredientstype(res.data);
         })
-        console.log(ingredientstype);
+        // console.log(ingredientstype);
     }, []);
 
     const deleteIngredient = (data) => {
@@ -243,7 +316,7 @@ function Manegefood() {
     }
 
     const ingredientsFunc = (data1, data) => {
-        console.log(data1);
+        // console.log(data1);
         setObjects(
             objects.map((results) => {
                 return results.indexs == data.indexs
@@ -264,13 +337,13 @@ function Manegefood() {
     }
 
     const setvalueunits = (resultinput, data) => {
-        console.log("func " + resultinput.target.value)
+        // console.log("func " + resultinput.target.value)
         setObjects(
             objects.map((results) => {
-                console.log("data.index");
-                console.log(data.indexs);
-                console.log("results.index");
-                console.log(results.indexs);
+                // console.log("data.index");
+                // console.log(data.indexs);
+                // console.log("results.index");
+                // console.log(results.indexs);
                 return results.indexs == data.indexs
                     ? {
                         indexs: data.indexs,
@@ -289,13 +362,13 @@ function Manegefood() {
     }
 
     const setvalueprice = (resultinput, data) => {
-        console.log("func " + resultinput.target.value)
+        // console.log("func " + resultinput.target.value)
         setObjects(
             objects.map((results) => {
-                console.log("data.index");
-                console.log(data.indexs);
-                console.log("results.index");
-                console.log(results.indexs);
+                // console.log("data.index");
+                // console.log(data.indexs);
+                // console.log("results.index");
+                // console.log(results.indexs);
                 return results.indexs == data.indexs
                     ? {
                         indexs: data.indexs,
@@ -446,8 +519,8 @@ function Manegefood() {
         // const [protein, setProtein] = useState(0);
         // const [fat, setFat] = useState(0);
         // const [carb, setCarb] = useState(0);
-        console.log("Calculator Success !!");
-        console.log(objects);
+        // console.log("Calculator Success !!");
+        // console.log(objects);
 
         /*
         {
@@ -474,7 +547,7 @@ function Manegefood() {
             // setFat(fat + result.fat);
             // setCarb(carb + result.carbohydrate);
 
-            console.log(result.energy);
+            // console.log(result.energy);
             sumEnergy = sumEnergy + result.energy;
             sumProtein = sumProtein + result.protein;
             sumFat = sumFat + result.fat;
@@ -485,7 +558,8 @@ function Manegefood() {
         setProtein(sumProtein);
         setFat(sumFat);
         setCarb(sumCarb);
-        setPrice2(sumPrice + parseInt(price));
+        if (stateapi)
+            setPrice2(sumPrice + parseInt(price));
     }, [objects]);
 
     function calculator() {
@@ -494,19 +568,19 @@ function Manegefood() {
     function calculator2() {
         ob = [];
         objects.map((typedata, key) => {
-            console.log("!!!!!!!!!!!!!!!!!!!!!!!! " + typedata.ingredient);
+            // console.log("!!!!!!!!!!!!!!!!!!!!!!!! " + typedata.ingredient);
             let datatypes = [];
             if (typedata.types == "1") {
                 datatypes = type1.filter((result) => {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
-                console.log("11111111111111111");
-                console.log(typedata.price)
+                // console.log("11111111111111111");
+                // console.log(typedata.price)
                 // var priceNu = (datatypes[0].price)
                 if (carbohydratess < 0) {
                     carbohydratess = carbohydratess * (-1);
@@ -548,7 +622,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -575,7 +649,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -601,7 +675,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -628,7 +702,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -655,7 +729,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -682,7 +756,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -709,7 +783,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -736,7 +810,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -763,7 +837,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -790,7 +864,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -816,7 +890,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -843,7 +917,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -870,7 +944,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -897,7 +971,7 @@ function Manegefood() {
                     return result.id_ingredient == typedata.ingredient;
                 });
 
-                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy) ;
+                var kcalins = ((typedata.units / datatypes[0].unit) * datatypes[0].energy);
                 var proteinss = ((typedata.units / datatypes[0].unit) * datatypes[0].protein) / 100;
                 var fats = ((typedata.units / datatypes[0].unit) * datatypes[0].fat) / 100;
                 var carbohydratess = ((typedata.units / datatypes[0].unit) * datatypes[0].carbohydrate) / 100;
@@ -925,7 +999,7 @@ function Manegefood() {
 
 
     }
-    console.log(objects);
+    // console.log(objects);
     return (
         <div>
             <Navbarmain />
@@ -960,11 +1034,11 @@ function Manegefood() {
                                             appearance="none"
                                             value={price}
                                             onChange={(event) => { setPrice(event.target.value) }} />
-                                        
+
                                         <input className="form-control" placeholder="ราคารวม"
-                                            value={price2}                                           
+                                            value={price2}
                                             disabled
-                                             />
+                                        />
                                     </span>
                                 </div>
                                 <div className="btn-save">

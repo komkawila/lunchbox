@@ -126,18 +126,28 @@
 }
 .n-foods{
     width: 300px;
+    color: black;
+    margin-left: 10px;
+}
+.pp-foods{
+    width: 10px;
+    color: black;
+    margin-left: 10px;
 }
 .na-foods{
     width: 30px;
 }
 .u-foods{
-    width: 80px;
+    width: 70px;
 }
 .p-foods{
     width: 50;
+    margin-right: 0px;
+}
+.im-foods{
+    margin-left: auto;
     margin-right: 5px;
 }
-
 @media only screen and (max-width: 600px){
 
     .body-food{

@@ -187,7 +187,8 @@ function Menu() {
 
 
                                     <div className="item-right">
-                                        <button className="btn-edtiFood" style={{ backgroundColor: "rgb(223, 208, 6)", marginRight: "5px" }} >แก้ไข</button>
+                                        <button className="btn-edtiFood" style={{ backgroundColor: "rgb(223, 208, 6)", marginRight: "5px" }} 
+                                        onClick={()=>{history.push("editfood?userid="+userID+"&foodid="+data.id_food)}}>แก้ไข</button>
                                         <button className="btn-deleteFood" style={{ backgroundColor: "rgb(214, 36, 30)" }} onClick={() => deleteFoods(data.id_food, data.name_thai)}>ลบ</button>
 
                                     </div>
@@ -237,7 +238,9 @@ function Menu() {
 
 
                                     <div className="item-right">
-                                        <button className="btn-edtiFood" style={{ backgroundColor: "rgb(223, 208, 6)", marginRight: "5px" }} >แก้ไข</button>
+                                        {/* <button className="btn-edtiFood" style={{ backgroundColor: "rgb(223, 208, 6)", marginRight: "5px" }} >แก้ไข</button> */}
+                                        <button className="btn-edtiFood" style={{ backgroundColor: "rgb(223, 208, 6)", marginRight: "5px" }} 
+                                        onClick={()=>{history.push("editfood?userid="+userID+"&foodid="+data.id_food)}}>แก้ไข</button>
                                         <button className="btn-deleteFood" style={{ backgroundColor: "rgb(214, 36, 30)" }} onClick={() => deleteFoods(data.id_food, data.name_thai)}>ลบ</button>
 
                                     </div>

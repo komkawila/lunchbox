@@ -22,6 +22,7 @@ import ProfileAdmins from './component/profile/ProfileAdmin';
 import MenuStore from './component/menustore';
 import Sticker from './component/Sticker';
 import Igredients from './component/ingredients';
+import Editfood from './component/editfood';
 function App() {
     return (
         <div >
@@ -46,6 +47,7 @@ function App() {
                 <Route exact path="/profile-admin" component={ProfileAdmins}></Route>
                 <Route exact path="/sticker" component={Sticker}></Route>
                 <Route exact path="/ingredients" component={Igredients}></Route>
+                <Route exact path="/editfood" component={Editfood}></Route>
 
             </div>
         </div>
