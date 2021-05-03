@@ -42,6 +42,8 @@ function Manegefood() {
     };
 
     const UploadImmage = async (e) => {
+        console.log("e = ");
+        console.log(e);
         const formData = new FormData();
         formData.append("file", file);
         const res = await axios.post(
@@ -175,7 +177,8 @@ function Manegefood() {
                 showConfirmButton: true,
             });
 
-            UploadImmage(res.data);
+            // UploadImmage(res.data);
+            UploadImmage(foodsid);
             // console.log(objects);
             // console.log(detail);
             // console.log(energy);
@@ -185,6 +188,8 @@ function Manegefood() {
             // console.log(foodname);
             // console.log(price);
             history.push("/menu");
+            window.location.reload();
+            // history.push("/menu");
         })
 
 
